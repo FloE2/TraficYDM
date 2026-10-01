@@ -191,12 +191,74 @@ td.n,th.n{text-align:right}
 .legend{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:center;font-size:18px}
 .legend .li{font-size:34px;text-align:center}
 
-#toast{position:fixed;left:50%;bottom:calc(100px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--encre);color:#fff;padding:12px 20px;border-radius:14px;font-size:18px;font-weight:700;opacity:0;transition:.25s;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
+#toast{position:fixed;left:50%;top:calc(12px + env(safe-area-inset-top,0px));transform:translateX(-50%) translateY(-20px);background:var(--encre);color:#fff;padding:12px 20px;border-radius:14px;font-size:18px;font-weight:700;opacity:0;transition:.25s;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .loading{display:grid;place-items:center;min-height:60vh;font-size:40px}
 .spin{animation:spin 1s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+
+/* ---------- Pointage ---------- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:18px}
+.tile{background:#fff;border-radius:20px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;border:3px solid transparent;box-shadow:0 2px 8px rgba(15,63,80,.08);position:relative;min-height:150px;justify-content:center}
+.tile:hover{border-color:var(--bleu)}
+.tile:active{transform:scale(.97)}
+.tile .tl-ico{font-size:46px;line-height:1}
+.tile b{font-size:18px;line-height:1.2}
+.tile .tl-time{color:var(--gris);font-size:15px;display:flex;gap:4px;align-items:center}
+.tile.some{border-color:var(--ok)}
+.tl-count{position:absolute;top:8px;right:8px;background:var(--ok);color:#fff;border-radius:999px;padding:2px 10px;font-weight:700;font-size:15px}
+.calm{background:#fff;border-radius:20px;padding:24px;text-align:center;color:var(--gris);font-size:19px;margin-bottom:18px}
+.calm span{display:block;font-size:44px}
+.sec{font-size:17px;color:var(--gris);margin:6px 4px 8px}
+.list{margin-bottom:8px}
+.lrow{width:100%;display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:10px 12px;margin-bottom:6px;text-align:left;font-size:17px}
+.lrow:hover{background:var(--bleu-c)}
+.lrow .lt{font-weight:700;color:var(--bleu-f);min-width:50px}
+.lrow .li{font-size:24px}
+.lrow .ln{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lrow .ln small{display:block;color:var(--gris);font-size:14px}
+.lrow .lr{font-weight:700;white-space:nowrap}
+.lrow.miss{border-left:6px solid var(--att)}
+.lrow.done{border-left:6px solid var(--ok)}
+.lrow.abs{border-left:6px solid var(--ko);opacity:.8}
+details.grp{margin-bottom:12px}
+details.grp summary{cursor:pointer;list-style:none;font-weight:700;font-size:17px;padding:12px 14px;border-radius:14px;background:#fff;margin-bottom:6px}
+details.grp summary::-webkit-details-marker{display:none}
+details.grp.miss summary{background:var(--att-c);color:#7a4f00}
+details.grp.ok summary{background:var(--ok-c);color:var(--ok)}
+.wz-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.wz-who{flex:1;display:flex;align-items:center;gap:10px;min-width:0}
+.wz-who .wi{font-size:36px}
+.wz-who b{display:block;font-size:19px}
+.wz-who small{color:var(--gris)}
+.absbtn{display:flex;flex-direction:column;align-items:center;font-size:22px;background:var(--ko-c);border-radius:12px;padding:4px 10px;color:var(--ko)}
+.absbtn small{font-size:12px;font-weight:700}
+.wz-dots{display:flex;gap:6px;justify-content:center;margin-bottom:12px}
+.wz-dots button{width:34px;height:8px;border-radius:4px;background:var(--ligne)}
+.wz-dots button.done{background:var(--bleu)}
+.wz-dots button.on{background:var(--vert)}
+.wz-q{font-size:24px;text-align:center;margin:6px 0 14px}
+.namegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-bottom:10px}
+.pick.name{min-height:60px;font-size:17px;flex-direction:row}
+.numdisp{font-size:56px;font-weight:700;text-align:center;border:3px solid var(--ligne);border-radius:18px;padding:6px;margin:0 auto 12px;max-width:260px;min-height:84px}
+.numdisp .ph{color:#c3cfd3}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:340px;margin:0 auto}
+.keypad button{height:68px;border-radius:16px;background:var(--bleu-c);font-size:30px;font-weight:700;color:var(--bleu-f)}
+.keypad button:active{background:var(--bleu);color:#fff}
+.keypad .kpok{background:var(--ok);color:#fff}
+.tlab{font-weight:700;font-size:18px;margin:12px 0 6px}
+.tsel{display:flex;align-items:center;gap:8px;justify-content:center}
+.tsel button{width:64px;height:60px;border-radius:14px;background:var(--bleu-c);font-weight:700;font-size:18px;color:var(--bleu-f)}
+.tsel input{font-size:30px;font-weight:700;height:60px;border:3px solid var(--ligne);border-radius:14px;padding:0 10px;text-align:center;width:170px}
+.chiprow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0}
+.qchip{border:2px solid var(--ligne);border-radius:999px;padding:8px 14px;font-weight:700;background:#fff}
+.qchip.on{background:var(--bleu);color:#fff;border-color:var(--bleu)}
+.extra{display:flex;gap:10px;align-items:center;margin-top:14px}
+.extra .field{flex:1;margin:0}
+.extra .field input{font-size:18px}
+.wz-more{display:flex;gap:10px;margin-top:10px}
+.wz-more button{flex:1}
 @media (max-width:480px){.h-title small{display:none}.h-user span{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media print{
@@ -221,12 +283,12 @@ td.n,th.n{text-align:right}
    les données restent uniquement sur l'appareil (pour tester).
    ===================================================================== */
 const firebaseConfig = {
-  apiKey: "AIzaSyBOsViiZLflUhPL9vPc8aHPQXyAxyT1mMw",
-  authDomain: "frequentation-ydm.firebaseapp.com",
-  projectId: "frequentation-ydm",
-  storageBucket: "frequentation-ydm.firebasestorage.app",
-  messagingSenderId: "404771857737",
-  appId: "1:404771857737:web:50f18dc8b3fa018694a698"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 const ADMIN_ID = "rtagoust";            // identifiant administrateur (doit être identique dans firestore.rules)
 const DOMAINE  = "ydm-vaucresson.app";  // domaine fictif utilisé en interne (doit être identique dans firestore.rules)
@@ -396,7 +458,6 @@ const fmtCourt = s => parseYmd(s).toLocaleDateString('fr-FR',{weekday:'short',da
 const nf = n => (Math.round(n*10)/10).toLocaleString('fr-FR');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const genId = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
-const nowHM = () => { const d = new Date(); return `${pad(d.getHours())}:${pad(d.getMinutes() < 30 ? 0 : 30)}`; };
 
 function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(()=>el.classList.remove('show'), 2200); }
 function shake(el){ if(!el) return; el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
@@ -502,7 +563,7 @@ const S = {
   store:null, me:null, tab:'jour',
   date: todayStr(), weekRef: todayStr(),
   structures:[], planning:[], config:{ouverture:'08:00', fermeture:'22:00'},
-  items:[], drafts:[], planDay:1,
+  ens:{}, planDay:1,
   syn:{per:'mois', ref: todayStr(), from: todayStr(), to: todayStr()},
 };
 const isAdmin = () => S.me?.role === 'admin';
@@ -626,12 +687,13 @@ async function enter(u){
   if (isAdmin() && S.structures.length === 0) askImport();
 }
 async function loadRefs(){
-  const [st, pl, cf] = await Promise.all([S.store.list('structures'), S.store.list('planning'), S.store.get('config','app')]);
+  const [st, pl, cf, en] = await Promise.all([S.store.list('structures'), S.store.list('planning'), S.store.get('config','app'), S.store.list('enseignants')]);
+  S.ens = Object.fromEntries(en.map(e => [e.id, e.noms || []]));
   S.structures = st.sort((a,b) => a.nom.localeCompare(b.nom,'fr'));
   S.planning = pl;
   if (cf) S.config = {...S.config, ...cf};
 }
-ACT.logout = async () => { await S.store.signOut(); S.me = null; S.drafts = []; viewLogin(); };
+ACT.logout = async () => { await S.store.signOut(); S.me = null; viewLogin(); };
 
 /* =====================================================================
    COQUILLE
@@ -664,27 +726,11 @@ async function renderMain(){
   } catch(e){ console.error(e); m.innerHTML = `<div class="msg err">❌ ${esc(errMsg(e))}</div>`; }
 }
 
+const LEGENDE = [['👆','Un groupe arrive : touchez sa tuile'],['👤','Nom de l’enseignant'],['🏟️','Salle'],['🔢','Nombre de personnes'],['⏰','Heure d’arrivée et de départ'],['✅','Enregistrer'],['❌','Absent / annulé'],['⏳','Groupe pas encore pointé'],['➕','Groupe non prévu'],['🏆','Match']];
 ACT.help = () => openModal(`<h2>❓ Aide <button class="xbtn" data-act="closeModal">✕</button></h2>
-  <div class="legend">
-    <span class="li">➖➕</span><span>Nombre de personnes</span>
-    <span class="li">✅</span><span>Présent : enregistrer</span>
-    <span class="li">❌</span><span>Absent / annulé</span>
-    <span class="li">⏰</span><span>Changer l’horaire</span>
-    <span class="li">❓</span><span>Choisir la salle</span>
-    <span class="li">🏆</span><span>Match</span>
-    <span class="li">⧉</span><span>Même groupe, autre salle</span>
-    <span class="li">➕</span><span>Groupe non prévu</span>
-    <span class="li">🗑️</span><span>Effacer</span>
-  </div>
+  <div class="legend">${LEGENDE.map(([i,t]) => `<span class="li">${i}</span><span>${t}</span>`).join('')}</div>
   <h3 style="margin:16px 0 8px">Salles</h3>
-  <div class="legend">${SALLES.map(s => `<span class="li">${chip(s.id)}</span><span>${s.nom}</span>`).join('')}</div>
-  <h3 style="margin:16px 0 8px">Couleurs</h3>
-  <div class="legend">
-    <span class="li"><span class="dot" style="background:#b9c7cc;width:28px;height:28px;display:inline-block"></span></span><span>À faire</span>
-    <span class="li"><span class="dot" style="background:var(--att);width:28px;height:28px;display:inline-block"></span></span><span>Pas encore enregistré</span>
-    <span class="li"><span class="dot" style="background:var(--ok);width:28px;height:28px;display:inline-block"></span></span><span>Enregistré</span>
-    <span class="li"><span class="dot" style="background:var(--ko);width:28px;height:28px;display:inline-block"></span></span><span>Absent / annulé</span>
-  </div>`);
+  <div class="legend">${SALLES.map(s => `<span class="li">${chip(s.id)}</span><span>${s.nom}</span>`).join('')}</div>`);
 
 /* =====================================================================
    FENÊTRE MODALE
@@ -697,216 +743,263 @@ $('#modal').addEventListener('click', e => { if (e.target.id === 'modal') closeM
 const chip = id => { const s = SALLE[id]; return s ? `<span class="chip" style="background:${s.col}"><span class="ci">${s.ico}</span>${s.court}</span>` : ''; };
 
 /* =====================================================================
-   JOURNÉE (agents + admin)
+   JOURNÉE – pointage à l'arrivée (agents + admin)
    ===================================================================== */
-function itemFromPlanning(p, d){
-  const st = struct(p.structureId);
-  return { key:'p_'+p.id, date:d, planningId:p.id, saisie:null,
-    v:{ structureId:p.structureId, structureNom:st?.nom || '?', activite:st?.activite || '', baseType:st?.type || 'AUTRE',
-        match:!!p.match, salles:[...(p.salles||[])], debut:p.debut, fin:p.fin, effectif:'', statut:null } };
-}
-function itemFromSaisie(s){
-  return { key:'s_'+s.id, date:s.date, planningId:s.planningId || null, saisie:s,
-    v:{ structureId:s.structureId, structureNom:s.structureNom, activite:s.activite, baseType:s.baseType || s.type,
-        match:!!s.match, salles:[...(s.salles||[])], debut:s.debut, fin:s.fin, effectif:s.effectif, statut:s.statut } };
-}
-function buildDay(d, sais){
-  const dj = dow(parseYmd(d));
-  const items = []; const used = new Set();
-  S.planning.filter(p => p.jour === dj && p.actif !== false).forEach(p => {
-    const s = sais.find(x => x.planningId === p.id && !used.has(x.id));
-    if (s) { used.add(s.id); const it = itemFromSaisie(s); it.key = 'p_'+p.id; items.push(it); }
-    else items.push(itemFromPlanning(p, d));
-  });
-  sais.filter(s => !used.has(s.id)).forEach(s => items.push(itemFromSaisie(s)));
-  S.drafts.filter(x => x.date === d).forEach(x => items.push(x));
-  return items.sort((a,b) => mins(a.v.debut) - mins(b.v.debut) || a.v.structureNom.localeCompare(b.v.structureNom,'fr'));
-}
+const isScol = t => (t||'').startsWith('Scolaire');
+const nowMin = () => { const d = new Date(); return d.getHours()*60 + d.getMinutes(); };
+const hm = m => { m = Math.max(0, Math.min(23*60+55, Math.round(m))); return `${pad(Math.floor(m/60))}:${pad(m%60)}`; };
+const nowQ = () => hm(Math.floor(nowMin()/15)*15);
+const dots = ids => (ids||[]).map(id => `<span class="dot" style="background:${SALLE[id]?.col}" title="${SALLE[id]?.court||''}"></span>`).join('');
 const dayEditable = d => isAdmin() || d === todayStr();
+
+function dayModel(d, sais){
+  const dj = dow(parseYmd(d)); const used = new Set();
+  const planned = S.planning.filter(p => p.jour === dj && p.actif !== false).map(p => {
+    const st = struct(p.structureId);
+    const ss = sais.filter(s => s.planningId === p.id); ss.forEach(s => used.add(s.id));
+    const pres = ss.filter(s => s.statut === 'present');
+    return {p, st, sais:ss, pres, absent: !pres.length && ss.some(s => s.statut === 'absent')};
+  }).sort((a,b) => mins(a.p.debut) - mins(b.p.debut));
+  return {planned, extra: sais.filter(s => !used.has(s.id))};
+}
 
 async function viewJour(){
   const d = isAdmin() ? S.date : todayStr();
   const sais = await S.store.saisies(d, d);
-  S.items = buildDay(d, sais); S.curDate = d;
-  const ed = dayEditable(d);
+  S.daySais = sais; S.curDate = d;
+  const M = dayModel(d, sais); S.dayModel = M;
+  const today = todayStr(), isToday = d === today, nm = nowMin();
+  const now = [], later = [], missed = [];
+  M.planned.forEach(x => {
+    const scol = isScol(x.st?.type);
+    if (x.absent || (!scol && x.pres.length)) return;          // déjà traité
+    const a = mins(x.p.debut) - 60, b = mins(x.p.fin) + 30;
+    if (d > today || (isToday && nm < a)) later.push(x);
+    else if (isToday && nm <= b) now.push(x);
+    else if (!x.pres.length) missed.push(x);
+  });
+  const fait = [...sais].sort((a,b) => mins(a.debut) - mins(b.debut));
+  const total = sais.filter(s => s.statut === 'present').reduce((a,s) => a + (+s.effectif||0), 0);
   const nav = isAdmin() ? `
       <button class="navbtn" data-act="dayShift" data-n="-1" aria-label="Jour précédent">◀</button>
       <input type="date" class="datein" value="${d}" data-on="dayPick">
       <button class="navbtn" data-act="dayShift" data-n="1" aria-label="Jour suivant">▶</button>
-      ${d !== todayStr() ? '<button class="pill light" data-act="dayToday">Aujourd’hui</button>' : ''}` : '';
-  $('#main').innerHTML = `
-    <div class="dayhead"><h2>📅 ${fmtLong(d)}</h2>${nav}</div>
-    <div class="sumbar" id="sumbar"></div>
-    ${S.items.length ? `<div class="slots" id="slots">${S.items.map(it => cardHTML(it, ed)).join('')}</div>`
-      : `<div class="empty"><span class="ei">🗓️</span>Aucun créneau prévu.${ed ? '<br>➕ pour ajouter un groupe.' : ''}</div>`}
-    ${ed ? '<button class="fab" data-act="addSlot" aria-label="Ajouter un groupe">➕</button>' : ''}`;
-  refreshSummary();
+      ${!isToday ? '<button class="pill light" data-act="dayToday">Aujourd’hui</button>' : ''}` : '';
+  const rowP = (x, cls='') => `<button class="lrow ${cls}" data-act="point" data-pid="${x.p.id}">
+      <span class="lt">${x.p.debut}</span><span class="li">${actIco(x.st?.activite)}</span>
+      <span class="ln">${esc(x.st?.nom || '?')}</span>${dots(x.p.salles)}<span class="lr">${cls === 'miss' ? '⏳' : '➜'}</span></button>`;
+  const rowS = s => `<button class="lrow ${s.statut === 'absent' ? 'abs' : 'done'}" data-act="editS" data-sid="${s.id}">
+      <span class="lt">${s.debut}</span><span class="li">${actIco(s.activite)}</span>
+      <span class="ln">${esc(s.structureNom)}${s.enseignant ? `<small>👤 ${esc(s.enseignant)}</small>` : ''}</span>${dots(s.salles)}
+      <span class="lr">${s.statut === 'absent' ? '❌' : '👥 ' + s.effectif}</span></button>`;
+  const tile = x => `<button class="tile ${x.pres.length ? 'some' : ''}" data-act="point" data-pid="${x.p.id}">
+      <span class="tl-ico">${actIco(x.st?.activite)}</span><b>${esc(x.st?.nom || '?')}</b>
+      <span class="tl-time">${isScol(x.st?.type) ? '' : x.p.debut + ' ' }${dots(x.p.salles)}</span>
+      ${x.pres.length ? `<span class="tl-count">✅ ${x.pres.length}</span>` : ''}</button>`;
+
+  let h = `<div class="dayhead"><h2>📅 ${fmtLong(d)}</h2>${nav}<div class="sum">👥 ${total}</div></div>`;
+  if (isToday) h += now.length
+    ? `<div class="tiles">${now.map(tile).join('')}</div>`
+    : `<div class="calm"><span>😌</span>Personne n’est attendu maintenant</div>`;
+  if (missed.length) h += `<details class="grp miss" ${isToday ? '' : 'open'}><summary>⏳ ${missed.length} à pointer</summary>${missed.map(x => rowP(x,'miss')).join('')}</details>`;
+  if (later.length) h += `<h3 class="sec">🕒 ${isToday ? 'Plus tard' : 'Prévu'}</h3><div class="list">${later.slice(0,3).map(x => rowP(x)).join('')}</div>
+      ${later.length > 3 ? `<details class="grp"><summary>▼ ${later.length-3} autres</summary>${later.slice(3).map(x => rowP(x)).join('')}</details>` : ''}`;
+  if (fait.length) h += `<details class="grp ok" ${isToday ? '' : 'open'}><summary>✅ Fait (${fait.length})</summary>${fait.map(rowS).join('')}</details>`;
+  if (!M.planned.length && !sais.length) h += `<div class="empty"><span class="ei">🗓️</span>Aucun groupe prévu.<br>➕ pour ajouter un groupe.</div>`;
+  h += `<button class="fab" data-act="addNew" aria-label="Ajouter un groupe">➕</button>`;
+  $('#main').innerHTML = h;
 }
 ON.dayPick = el => { if (el.value) { S.date = el.value; renderMain(); } };
 ACT.dayShift = el => { S.date = ymd(addDays(parseYmd(S.date), +el.dataset.n)); renderMain(); };
 ACT.dayToday = () => { S.date = todayStr(); renderMain(); };
 
-function refreshSummary(){
-  const el = $('#sumbar'); if (!el) return;
-  const tot = S.items.filter(i => i.v.statut === 'present').reduce((a,i) => a + (+i.v.effectif||0), 0);
-  const nOk = S.items.filter(i => i.v.statut === 'present').length;
-  const nKo = S.items.filter(i => i.v.statut === 'absent').length;
-  const nTodo = S.items.length - nOk - nKo;
-  el.innerHTML = `<div class="sum">👥 ${tot}<small>personnes</small></div><div class="sum">✅ ${nOk}</div><div class="sum">❌ ${nKo}</div><div class="sum">⏳ ${nTodo}<small>à faire</small></div>`;
-}
+/* ---------- Assistant de pointage (une question par écran) ---------- */
+let W = null;
+const stepsFor = add => [...(add ? ['struct'] : []), ...(isScol(W.baseType) ? ['ens'] : []), 'salle', 'nb', 'heure'];
 
-function cardHTML(it, ed){
-  const v = it.v;
-  const cls = v.statut === 'present' ? 'ok' : v.statut === 'absent' ? 'ko' : it.dirty ? 'pend' : '';
-  const isClub = (v.baseType||'').startsWith('CLUB');
-  const type = v.match ? 'CLUB rencontre sportive' : v.baseType;
-  const chips = v.salles.length ? v.salles.map(chip).join('') : `<span class="chip warn"><span class="ci">❓</span>Salle ?</span>`;
-  const head = `<div class="slot-top">
-      ${ed ? `<button class="time" data-act="editHours" aria-label="Changer l'horaire">⏰ ${v.debut}–${v.fin}</button>` : `<span class="time">⏰ ${v.debut}–${v.fin}</span>`}
-      <div class="chips" ${ed ? 'data-act="editSalles" role="button" aria-label="Choisir les salles"' : ''}>${chips}</div>
+function wzFromPlanned(x){
+  const p = x.p, st = x.st, scol = isScol(st?.type), isT = S.curDate === todayStr();
+  const deb = scol ? (isT ? nowQ() : p.debut) : p.debut;
+  return {planningId:p.id, structureId:p.structureId, nom:st?.nom || '?', activite:st?.activite || '', baseType:st?.type || 'AUTRE',
+    enseignant:'', salles: scol ? [] : [...(p.salles||[])], debut:deb, fin: scol ? hm(mins(deb)+60) : p.fin,
+    match:!!p.match, pDeb:p.debut, pFin:p.fin};
+}
+ACT.point = el => {
+  const x = S.dayModel.planned.find(y => y.p.id === el.dataset.pid); if (!x) return;
+  W = {mode:'new', effectif:'', step:0, ...wzFromPlanned(x)}; W.steps = stepsFor(false); renderWz();
+};
+ACT.editS = el => {
+  const s = S.daySais.find(y => y.id === el.dataset.sid); if (!s) return;
+  const p = S.planning.find(q => q.id === s.planningId);
+  W = {mode:'edit', sid:s.id, creePar:s.creePar, planningId:s.planningId || null, structureId:s.structureId, nom:s.structureNom,
+    activite:s.activite, baseType:s.baseType || s.type, enseignant:s.enseignant || '', salles:[...(s.salles||[])],
+    effectif: s.statut === 'present' ? String(s.effectif) : '', debut:s.debut, fin:s.fin, match:!!s.match, pDeb:p?.debut, pFin:p?.fin};
+  W.steps = stepsFor(false); W.step = W.steps.indexOf('nb'); renderWz();
+};
+ACT.addNew = () => {
+  const isT = S.curDate === todayStr(), deb = isT ? nowQ() : '18:00';
+  W = {mode:'new', add:true, planningId:null, structureId:null, nom:'', activite:'', baseType:'AUTRE', enseignant:'', salles:[],
+    effectif:'', debut:deb, fin:hm(mins(deb)+60), match:false, step:0, q:''};
+  W.steps = ['struct','salle','nb','heure']; renderWz();
+};
+
+function renderWz(){
+  const step = W.steps[W.step];
+  const head = `<div class="wz-head">
+      <button class="xbtn" data-act="${W.step > 0 ? 'wzBack' : 'closeModal'}" aria-label="${W.step > 0 ? 'Retour' : 'Fermer'}">${W.step > 0 ? '↩' : '✕'}</button>
+      <div class="wz-who">${W.nom ? `<span class="wi">${actIco(W.activite)}</span><div><b>${esc(W.nom)}</b>${W.enseignant ? `<small>👤 ${esc(W.enseignant)}</small>` : ''}</div>` : '<b>➕ Groupe</b>'}</div>
+      ${W.mode === 'new' && W.planningId && !isScol(W.baseType) ? `<button class="absbtn" data-act="wzAbsent" aria-label="Absent ou annulé">❌<small>Absent</small></button>` : ''}
+      ${W.step > 0 ? '<button class="xbtn" data-act="closeModal" aria-label="Fermer">✕</button>' : ''}
     </div>
-    <div class="slot-who"><span class="big">${actIco(v.activite)}</span>
-      <div><b>${esc(v.structureNom)}</b><small>${TYPE_ICO[type]||''} ${esc(v.activite||'')}${v.match?' · Match':''}</small></div>
-      ${isClub && ed ? `<button class="match ${v.match?'on':''}" data-act="toggleMatch" title="Match" aria-label="Match">🏆</button>` : (v.match ? '<span style="font-size:28px">🏆</span>' : '')}
-    </div>`;
-  if (!ed) {
-    const eff = v.statut === 'present' ? `👥 ${v.effectif}` : v.statut === 'absent' ? '❌' : '⏳';
-    return `<div class="slot ${cls}" data-key="${it.key}">${head}<div class="slot-bottom"><span class="readonly-eff">${eff}</span></div></div>`;
+    <div class="wz-dots">${W.steps.map((s,i) => `<button class="${i === W.step ? 'on' : i < W.step ? 'done' : ''}" data-act="wzGo" data-i="${i}" aria-label="Étape ${i+1}"></button>`).join('')}</div>`;
+  let b = '';
+  if (step === 'struct') {
+    const list = S.structures.filter(s => s.actif !== false && (!W.q || s.nom.toLowerCase().includes(W.q.toLowerCase())));
+    b = `<h3 class="wz-q">Qui arrive ?</h3>
+      <div class="field"><span class="fi">🔍</span><input id="wq" value="${esc(W.q||'')}" data-on="wzQ" placeholder="chercher"></div>
+      <div class="pickgrid">${list.map(s => `<button class="pick" data-act="wzStruct" data-id="${s.id}"><span class="pi">${actIco(s.activite)}</span>${esc(s.nom)}</button>`).join('')}
+        <button class="pick ${W.autre ? 'on' : ''}" data-act="wzStruct" data-id="__autre"><span class="pi">✏️</span>Autre</button></div>
+      ${W.autre ? `<div class="field"><span class="fi">✏️</span><input id="wnom" placeholder="nom du groupe" value="${esc(W.nomLibre||'')}" data-enter="wzAutreOk"></div><button class="bigbtn" data-act="wzAutreOk" aria-label="Continuer">➜</button>` : ''}`;
   }
-  return `<div class="slot ${cls}" data-key="${it.key}">${head}
-    <div class="slot-bottom">
-      <div class="counter"><span class="pi">👥</span><button data-act="minus" aria-label="Moins">−</button><input type="number" inputmode="numeric" min="0" placeholder="0" value="${v.statut==='absent' ? '' : esc(v.effectif)}" data-on="effectif" aria-label="Nombre de personnes"><button data-act="plus" aria-label="Plus">+</button></div>
-      <button class="act okb ${v.statut==='present'?'on':''}" data-act="present" aria-label="Présent, enregistrer">✅</button>
-      <button class="act kob ${v.statut==='absent'?'on':''}" data-act="absent" aria-label="Absent ou annulé">❌</button>
-    </div>
-    <div class="slot-tools">
-      <button class="tool" data-act="dupSlot" title="Même groupe, autre salle" aria-label="Même groupe, autre salle">⧉</button>
-      ${(it.saisie || it.isDraft) ? `<button class="tool" data-act="delSlot" title="Effacer" aria-label="Effacer">🗑️</button>` : ''}
-    </div></div>`;
+  if (step === 'ens') {
+    const noms = S.ens[W.structureId] || [];
+    b = `<h3 class="wz-q">👤 Enseignant ?</h3>
+      ${noms.length ? `<div class="namegrid">${noms.map((n,i) => `<button class="pick name ${W.enseignant === n ? 'on' : ''}" data-act="wzEns" data-i="${i}">👤 ${esc(n)}</button>`).join('')}</div>` : ''}
+      <div class="field"><span class="fi">✏️</span><input id="wens" placeholder="${noms.length ? 'autre nom' : 'nom de l’enseignant'}" value="${noms.includes(W.enseignant) ? '' : esc(W.enseignant)}" data-enter="wzEnsNew" autocomplete="off"></div>
+      <button class="bigbtn" data-act="wzEnsNew" aria-label="Continuer">➜</button>`;
+  }
+  if (step === 'salle') {
+    const single = isScol(W.baseType);
+    b = `<h3 class="wz-q">Quelle salle ?</h3>
+      <div class="pickgrid">${SALLES.map(s => `<button class="pick salle-pick ${W.salles.includes(s.id) ? 'on' : ''}" style="background:${s.col}" data-act="wzSalle" data-id="${s.id}"><span class="pi">${s.ico}</span>${s.court}</button>`).join('')}</div>
+      ${single ? '' : '<button class="bigbtn" data-act="wzNext" aria-label="Continuer">➜</button>'}`;
+  }
+  if (step === 'nb') {
+    b = `<h3 class="wz-q">👥 Combien ?</h3>
+      <div class="numdisp" id="numd">${W.effectif === '' ? '<span class="ph">0</span>' : W.effectif}</div>
+      <div class="keypad">${[1,2,3,4,5,6,7,8,9].map(n => `<button data-act="kp" data-k="${n}">${n}</button>`).join('')}
+        <button data-act="kp" data-k="del" aria-label="Effacer">⌫</button><button data-act="kp" data-k="0">0</button>
+        <button class="kpok" data-act="wzNext" aria-label="Continuer">➜</button></div>`;
+  }
+  if (step === 'heure') {
+    const dur = mins(W.fin) - mins(W.debut), isT = S.curDate === todayStr(), scol = isScol(W.baseType);
+    const tsel = w => `<div class="tsel"><button data-act="tAdj" data-w="${w}" data-n="-15" aria-label="Moins 15 minutes">−15</button>
+      <input type="time" step="300" value="${W[w]}" data-on="tSet" data-w="${w}" aria-label="${w === 'debut' ? 'Heure d’arrivée' : 'Heure de départ'}">
+      <button data-act="tAdj" data-w="${w}" data-n="15" aria-label="Plus 15 minutes">+15</button></div>`;
+    b = `<h3 class="wz-q">⏰ Horaire</h3>
+      <div class="tlab">🟢 Arrivée</div>${tsel('debut')}
+      <div class="chiprow">${W.pDeb && !scol ? `<button class="qchip ${W.debut === W.pDeb ? 'on' : ''}" data-act="tQuick" data-w="debut" data-v="${W.pDeb}">📋 Prévu ${W.pDeb}</button>` : ''}
+        ${isT ? `<button class="qchip" data-act="tQuick" data-w="debut" data-v="${nowQ()}">🕒 Maintenant</button>` : ''}</div>
+      <div class="tlab">🔴 Départ</div>
+      <div class="chiprow">${[[60,'1 h'],[90,'1 h 30'],[120,'2 h']].map(([m,l]) => `<button class="qchip ${dur === m ? 'on' : ''}" data-act="tDur" data-m="${m}">${l}</button>`).join('')}
+        ${W.pFin && !scol ? `<button class="qchip ${W.fin === W.pFin ? 'on' : ''}" data-act="tQuick" data-w="fin" data-v="${W.pFin}">📋 Prévu ${W.pFin}</button>` : ''}</div>
+      ${tsel('fin')}
+      ${!scol ? `<div class="extra">${(W.baseType||'').startsWith('CLUB') ? `<button class="match ${W.match ? 'on' : ''}" data-act="wzMatch" title="Match" aria-label="Match">🏆</button>` : ''}
+        <div class="field"><span class="fi">👤</span><input id="wresp" placeholder="responsable (facultatif)" value="${esc(W.enseignant)}" data-on="wzResp"></div></div>` : ''}
+      <button class="bigbtn vert" data-act="wzSave">✅ Enregistrer</button>
+      ${W.mode === 'edit' ? `<div class="wz-more"><button class="btn2" data-act="wzAbsent">❌ Absent</button><button class="btn2" data-act="wzDel">🗑️ Effacer</button></div>` : ''}`;
+  }
+  openModal(`<div class="wz">${head}${b}</div>`);
+  if (step === 'ens' && !(S.ens[W.structureId]||[]).length) setTimeout(() => $('#wens')?.focus(), 50);
 }
-const itemOf = el => { const k = el.closest('[data-key]')?.dataset.key; return S.items.find(i => i.key === k); };
-function refreshCard(it){
-  const el = document.querySelector(`[data-key="${it.key}"]`); if (!el) return;
-  el.outerHTML = cardHTML(it, dayEditable(it.date));
+function wzValid(step){
+  if (step === 'salle' && !W.salles.length) { shake(document.querySelector('.modal-box .pickgrid')); return false; }
+  if (step === 'nb' && !(+W.effectif > 0)) { shake($('#numd')); return false; }
+  return true;
 }
-function changed(it){
-  if (it.v.statut) { clearTimeout(it._t); it._t = setTimeout(() => saveItem(it), 900); }
-  else { it.dirty = true; const el = document.querySelector(`[data-key="${it.key}"]`); el?.classList.add('pend'); }
+function wzNext(){ if (!wzValid(W.steps[W.step])) return; if (W.step < W.steps.length-1) { W.step++; renderWz(); } }
+ACT.wzNext = wzNext;
+ACT.wzBack = () => { W.step = Math.max(0, W.step-1); renderWz(); };
+ACT.wzGo = el => { const i = +el.dataset.i; if (i < W.step || (W.mode === 'edit' && wzValid(W.steps[W.step]))) { W.step = i; renderWz(); } };
+ON.wzQ = el => { W.q = el.value; const pos = el.selectionStart; renderWz(); const i = $('#wq'); i.focus(); i.setSelectionRange(pos,pos); };
+ACT.wzStruct = el => {
+  const id = el.dataset.id;
+  if (id === '__autre') { W.autre = true; renderWz(); setTimeout(() => $('#wnom')?.focus(), 50); return; }
+  const st = struct(id);
+  Object.assign(W, {structureId:id, nom:st.nom, activite:st.activite, baseType:st.type, autre:false});
+  // rattache au créneau prévu le plus proche de l'heure actuelle pour cette structure
+  const c = S.dayModel.planned.filter(x => x.p.structureId === id && !x.absent && (isScol(st.type) || !x.pres.length))
+    .sort((a,b) => Math.abs(mins(a.p.debut)-nowMin()) - Math.abs(mins(b.p.debut)-nowMin()))[0];
+  if (c) { const f = wzFromPlanned(c); Object.assign(W, {planningId:f.planningId, salles:f.salles, pDeb:f.pDeb, pFin:f.pFin, match:f.match});
+    if (!isScol(st.type)) Object.assign(W, {debut:f.debut, fin:f.fin}); }
+  W.steps = stepsFor(true); W.step = 1; renderWz();
+};
+ACT.wzAutreOk = () => {
+  const n = ($('#wnom')?.value || '').trim(); if (!n) return shake($('#wnom')?.parentElement);
+  Object.assign(W, {nom:n, nomLibre:n, structureId:null, activite:'Autre', baseType:'AUTRE'});
+  W.steps = stepsFor(true); W.step = 1; renderWz();
+};
+ACT.wzEns = el => { W.enseignant = (S.ens[W.structureId]||[])[+el.dataset.i]; wzNext(); };
+ACT.wzEnsNew = () => { const v = ($('#wens')?.value || '').trim(); if (v) W.enseignant = v; if (!W.enseignant) return shake($('#wens')?.parentElement); wzNext(); };
+ACT.wzSalle = el => {
+  const id = el.dataset.id;
+  if (isScol(W.baseType)) { W.salles = [id]; renderWz(); setTimeout(wzNext, 150); return; }
+  W.salles = W.salles.includes(id) ? W.salles.filter(x => x !== id) : [...W.salles, id]; el.classList.toggle('on');
+};
+function kp(k){
+  let v = String(W.effectif);
+  if (k === 'del') v = v.slice(0,-1); else if (v.length < 4) v = (v === '0' ? '' : v) + k;
+  W.effectif = v; const d = $('#numd'); if (d) d.innerHTML = v === '' ? '<span class="ph">0</span>' : v;
 }
-ACT.plus = el => { const it = itemOf(el); if (it.v.statut === 'absent') it.v.statut = null; it.v.effectif = (+it.v.effectif||0)+1; el.parentElement.querySelector('input').value = it.v.effectif; changed(it); };
-ACT.minus = el => { const it = itemOf(el); it.v.effectif = Math.max(0,(+it.v.effectif||0)-1); el.parentElement.querySelector('input').value = it.v.effectif; changed(it); };
-ON.effectif = el => { const it = itemOf(el); const n = parseInt(el.value,10); it.v.effectif = isNaN(n) ? '' : Math.max(0,n); if (it.v.statut === 'absent') it.v.statut = null; changed(it); };
-ACT.present = el => {
-  const it = itemOf(el); const card = el.closest('.slot');
-  if (!(+it.v.effectif > 0)) { shake(card.querySelector('.counter')); card.querySelector('.counter input').focus(); return; }
-  if (!it.v.salles.length) { return pickSalles(it, () => { it.v.statut = 'present'; saveItem(it); }); }
-  it.v.statut = 'present'; saveItem(it);
+ACT.kp = el => kp(el.dataset.k);
+document.addEventListener('keydown', e => {
+  if (!W || $('#modal').classList.contains('hidden') || W.steps[W.step] !== 'nb') return;
+  if (/^[0-9]$/.test(e.key)) kp(e.key); else if (e.key === 'Backspace') kp('del'); else if (e.key === 'Enter') wzNext(); else return;
+  e.preventDefault();
+});
+function setT(w, v){
+  if (w === 'debut') { const d = mins(W.fin) - mins(W.debut); W.debut = v; W.fin = hm(mins(v) + (d > 0 ? d : 60)); }
+  else W.fin = v;
+}
+ACT.tAdj = el => { setT(el.dataset.w, hm(mins(W[el.dataset.w]) + (+el.dataset.n))); renderWz(); };
+ACT.tQuick = el => { setT(el.dataset.w, el.dataset.v); renderWz(); };
+ACT.tDur = el => { W.fin = hm(mins(W.debut) + (+el.dataset.m)); renderWz(); };
+ON.tSet = el => {
+  if (!el.value) return; setT(el.dataset.w, el.value);
+  if (el.dataset.w === 'debut') { const f = document.querySelector('input[data-w="fin"]'); if (f) f.value = W.fin; }
+  const dur = mins(W.fin) - mins(W.debut);
+  document.querySelectorAll('[data-act="tDur"]').forEach(b => b.classList.toggle('on', +b.dataset.m === dur));
 };
-ACT.absent = el => { const it = itemOf(el); it.v.statut = 'absent'; it.v.effectif = 0; saveItem(it); };
-ACT.toggleMatch = el => { const it = itemOf(el); it.v.match = !it.v.match; refreshCard(it); if (it.v.statut) saveItem(it); };
-ACT.editSalles = el => { const it = itemOf(el); pickSalles(it, () => { refreshCard(it); if (it.v.statut) saveItem(it); }); };
-ACT.editHours = el => { const it = itemOf(el); pickHours(it.v, () => { refreshCard(it); if (it.v.statut) saveItem(it); }); };
-ACT.dupSlot = el => {
-  const it = itemOf(el);
-  const nd = { key:'d_'+genId(), date:it.date, isDraft:true, planningId:null, saisie:null, v:{...it.v, salles:[], effectif:'', statut:null} };
-  S.drafts.push(nd); S.items.push(nd);
-  el.closest('.slot').insertAdjacentHTML('afterend', cardHTML(nd, true));
-  refreshSummary();
-  pickSalles(nd, () => refreshCard(nd));
-};
-ACT.delSlot = async el => {
-  const it = itemOf(el);
-  if (!confirm('🗑️ Effacer ?')) return;
-  if (it.isDraft) { S.drafts = S.drafts.filter(x => x !== it); }
-  else if (it.saisie) { try { await S.store.del('saisies', it.saisie.id); } catch(e){ return toast('❌ '+errMsg(e)); } }
-  toast('🗑️ Effacé'); renderMain();
-};
+ACT.wzMatch = el => { W.match = !W.match; el.classList.toggle('on'); };
+ON.wzResp = el => { W.enseignant = el.value; };
 
-let selTmp = [];
-function pickSalles(it, done){
-  selTmp = [...it.v.salles];
-  const render = () => openModal(`<h2>Salle(s) <button class="xbtn" data-act="closeModal">✕</button></h2>
-    <div class="pickgrid">${SALLES.map(s => `<button class="pick salle-pick ${selTmp.includes(s.id)?'on':''}" style="background:${s.col}" data-act="tglSalle" data-id="${s.id}"><span class="pi">${s.ico}</span>${s.court}</button>`).join('')}</div>
-    <div class="modal-actions"><button class="bigbtn vert" data-act="okSalles">✅</button></div>`);
-  ACT.tglSalle = b => { const id = b.dataset.id; selTmp = selTmp.includes(id) ? selTmp.filter(x => x !== id) : [...selTmp, id]; b.classList.toggle('on'); };
-  ACT.okSalles = () => { if (!selTmp.length) return shake($('.pickgrid')); it.v.salles = SALLES.map(s=>s.id).filter(id => selTmp.includes(id)); closeModal(); done(); };
-  render();
+function wzData(statut){
+  const d = S.curDate, dt = parseYmd(d);
+  return { date:d, annee:dt.getFullYear(), mois:dt.getMonth()+1, jourMois:dt.getDate(), jourSemaine:dow(dt),
+    structureId:W.structureId || null, structureNom:W.nom, activite:W.activite || '', enseignant:(W.enseignant||'').trim(),
+    baseType:W.baseType || 'AUTRE', match:!!W.match, type: W.match ? 'CLUB rencontre sportive' : (W.baseType || 'AUTRE'),
+    salles: SALLES.map(s => s.id).filter(id => W.salles.includes(id)), debut:W.debut, fin:W.fin,
+    effectif: statut === 'present' ? (+W.effectif||0) : 0, statut, planningId:W.planningId || null,
+    creePar: W.creePar || S.me.id, modifiePar:S.me.id, modifieLe:new Date().toISOString() };
 }
-function pickHours(v, done){
-  openModal(`<h2>⏰ Horaire <button class="xbtn" data-act="closeModal">✕</button></h2>
-    <div class="timebig"><input type="time" id="hd" value="${v.debut}" step="300"> ➜ <input type="time" id="hf" value="${v.fin}" step="300"></div>
-    <div class="modal-actions"><button class="bigbtn vert" data-act="okHours">✅</button></div>`);
-  ACT.okHours = () => { const a = $('#hd').value, b = $('#hf').value; if (!a || !b || mins(b) <= mins(a)) return shake($('.timebig')); v.debut = a; v.fin = b; closeModal(); done(); };
-}
-
-async function saveItem(it){
-  const v = it.v, d = it.date, dt = parseYmd(d);
-  const id = it.saisie?.id || (it.planningId ? `${d}_${it.planningId}` : genId());
-  const data = {
-    date:d, annee:dt.getFullYear(), mois:dt.getMonth()+1, jourMois:dt.getDate(), jourSemaine:dow(dt),
-    structureId:v.structureId || null, structureNom:v.structureNom, activite:v.activite || '',
-    baseType:v.baseType || 'AUTRE', match:!!v.match, type: v.match ? 'CLUB rencontre sportive' : (v.baseType || 'AUTRE'),
-    salles:v.salles, debut:v.debut, fin:v.fin, effectif: v.statut === 'present' ? (+v.effectif||0) : 0, statut:v.statut,
-    planningId:it.planningId || null,
-    creePar: it.saisie?.creePar || S.me.id, modifiePar:S.me.id, modifieLe:new Date().toISOString()
-  };
+async function wzWrite(data){
   try {
-    await S.store.set('saisies', id, data);
-    it.saisie = {id, ...data}; it.dirty = false;
-    if (it.isDraft) { S.drafts = S.drafts.filter(x => x !== it); it.isDraft = false; }
-    toast(offlineFlag ? '📶 Enregistré (envoi dès le retour d’internet)' : (v.statut === 'absent' ? '❌ Enregistré' : '✅ Enregistré'));
-    refreshCard(it); refreshSummary();
-  } catch(e){ toast('❌ '+errMsg(e)); }
+    await S.store.set('saisies', W.sid || genId(), data);
+    if (isScol(W.baseType) && W.structureId && data.enseignant) {
+      const noms = S.ens[W.structureId] || [];
+      if (!noms.includes(data.enseignant)) {
+        S.ens[W.structureId] = [...noms, data.enseignant].sort((a,b) => a.localeCompare(b,'fr'));
+        S.store.set('enseignants', W.structureId, {noms:S.ens[W.structureId]}).catch(() => {});
+      }
+    }
+    toast(offlineFlag ? '📶 Enregistré (envoi dès le retour d’internet)' : (data.statut === 'absent' ? '❌ Enregistré' : '✅ Enregistré'));
+    closeModal(); W = null; renderMain();
+  } catch(e){ toast('❌ ' + errMsg(e)); }
 }
-
-/* ---- Ajout d'un groupe non prévu ---- */
-let NEW = null;
-ACT.addSlot = () => {
-  NEW = { structureId:null, nomLibre:'', salles:[], debut:nowHM(), fin:'', effectif:'', match:false, q:'' };
-  const f = mins(NEW.debut)+120; NEW.fin = `${pad(Math.min(23,Math.floor(f/60)))}:${pad(f%60)}`;
-  renderAdd();
+ACT.wzSave = () => {
+  if (!W.salles.length) { W.step = W.steps.indexOf('salle'); renderWz(); return toast('❓ Salle ?'); }
+  if (!(+W.effectif > 0)) { W.step = W.steps.indexOf('nb'); renderWz(); return toast('👥 Combien ?'); }
+  if (mins(W.fin) <= mins(W.debut)) { shake(document.querySelectorAll('.tsel')[1]); return; }
+  wzWrite(wzData('present'));
 };
-function renderAdd(){
-  const st = struct(NEW.structureId);
-  const list = S.structures.filter(s => s.actif !== false && (!NEW.q || s.nom.toLowerCase().includes(NEW.q.toLowerCase())));
-  const step1 = `<div class="field"><span class="fi">🔍</span><input id="aq" value="${esc(NEW.q)}" data-on="addQ" placeholder="chercher"></div>
-    <div class="pickgrid" id="agrid">${list.map(s => `<button class="pick ${NEW.structureId===s.id?'on':''}" data-act="addPick" data-id="${s.id}"><span class="pi">${actIco(s.activite)}</span>${esc(s.nom)}</button>`).join('')}
-      <button class="pick ${NEW.structureId==='__autre'?'on':''}" data-act="addPick" data-id="__autre"><span class="pi">✏️</span>Autre</button></div>`;
-  const ready = NEW.structureId;
-  const isClub = st && st.type.startsWith('CLUB');
-  openModal(`<h2>➕ Groupe <button class="xbtn" data-act="closeModal">✕</button></h2>
-    ${!ready ? step1 : `
-      <div class="slot-who" style="margin-bottom:10px"><span class="big">${st ? actIco(st.activite) : '✏️'}</span>
-        <div>${st ? `<b>${esc(st.nom)}</b>` : `<input id="anom" class="datein" style="width:100%" placeholder="nom du groupe" value="${esc(NEW.nomLibre)}" data-on="addNom">`}</div>
-        <button class="tool" data-act="addReset" aria-label="Changer">↩</button></div>
-      <div class="pickgrid">${SALLES.map(s => `<button class="pick salle-pick ${NEW.salles.includes(s.id)?'on':''}" style="background:${s.col}" data-act="addSalle" data-id="${s.id}"><span class="pi">${s.ico}</span>${s.court}</button>`).join('')}</div>
-      <div class="timebig"><input type="time" id="ad" value="${NEW.debut}" step="300"> ➜ <input type="time" id="af" value="${NEW.fin}" step="300"></div>
-      <div class="slot-bottom"><div class="counter"><span class="pi">👥</span><button data-act="addMinus">−</button><input id="aeff" type="number" inputmode="numeric" min="0" placeholder="0" value="${NEW.effectif}"><button data-act="addPlus">+</button></div>
-        ${isClub ? `<button class="match ${NEW.match?'on':''}" data-act="addMatch" aria-label="Match">🏆</button>` : ''}</div>
-      <div class="modal-actions"><button class="bigbtn vert" data-act="addSave">✅</button></div>`}`);
-}
-ON.addQ = el => { NEW.q = el.value; const pos = el.selectionStart; renderAdd(); const i = $('#aq'); i.focus(); i.setSelectionRange(pos,pos); };
-ON.addNom = el => { NEW.nomLibre = el.value; };
-ACT.addPick = el => { NEW.structureId = el.dataset.id; renderAdd(); };
-ACT.addReset = () => { NEW.structureId = null; renderAdd(); };
-ACT.addSalle = el => { const id = el.dataset.id; NEW.salles = NEW.salles.includes(id) ? NEW.salles.filter(x=>x!==id) : [...NEW.salles, id]; el.classList.toggle('on'); };
-ACT.addPlus = () => { const i = $('#aeff'); i.value = (+i.value||0)+1; };
-ACT.addMinus = () => { const i = $('#aeff'); i.value = Math.max(0,(+i.value||0)-1); };
-ACT.addMatch = el => { NEW.match = !NEW.match; el.classList.toggle('on'); };
-ACT.addSave = async () => {
-  const st = struct(NEW.structureId);
-  const nom = st ? st.nom : ($('#anom')?.value || '').trim();
-  const debut = $('#ad').value, fin = $('#af').value, eff = parseInt($('#aeff').value,10);
-  if (!nom) return shake($('#anom'));
-  if (!NEW.salles.length) return shake(document.querySelector('.modal-box .pickgrid'));
-  if (!debut || !fin || mins(fin) <= mins(debut)) return shake($('.timebig'));
-  if (!(eff > 0)) return shake($('#aeff').parentElement);
-  const it = { key:'d_'+genId(), date:S.curDate, isDraft:false, planningId:null, saisie:null,
-    v:{ structureId: st ? st.id : null, structureNom:nom, activite: st ? st.activite : 'Autre', baseType: st ? st.type : 'AUTRE',
-        match: NEW.match, salles: SALLES.map(s=>s.id).filter(id => NEW.salles.includes(id)), debut, fin, effectif:eff, statut:'present' } };
-  closeModal();
-  await saveItem(it);
-  renderMain();
+ACT.wzAbsent = () => {
+  if (!confirm('❌ Absent / annulé ?')) return;
+  if (W.mode === 'new' && W.pDeb) { W.debut = W.pDeb; W.fin = W.pFin; }
+  wzWrite(wzData('absent'));
+};
+ACT.wzDel = async () => {
+  if (!confirm('🗑️ Effacer ?')) return;
+  try { await S.store.del('saisies', W.sid); toast('🗑️ Effacé'); closeModal(); W = null; renderMain(); } catch(e){ toast('❌ ' + errMsg(e)); }
 };
 
 /* =====================================================================
@@ -918,28 +1011,29 @@ async function viewSemaine(){
   const sais = await S.store.saisies(ymd(mon), ymd(sun));
   const today = todayStr();
   const days = [...Array(7)].map((_,i) => {
-    const d = ymd(addDays(mon,i)); const items = buildDay(d, sais.filter(s => s.date === d));
-    return {d, items, tot: items.filter(x => x.v.statut === 'present').reduce((a,x) => a+(+x.v.effectif||0), 0)};
+    const d = ymd(addDays(mon,i)), ss = sais.filter(s => s.date === d), M = dayModel(d, ss), rows = [];
+    M.planned.forEach(x => { if (!x.sais.length) rows.push({t:x.p.debut, nom:x.st?.nom || '?', act:x.st?.activite, salles:x.p.salles,
+      e: d < today ? '<span style="color:var(--att)">⏳</span>' : '·'}); });
+    ss.forEach(s => rows.push({t:s.debut, nom:s.structureNom + (s.enseignant ? ' – ' + s.enseignant : ''), act:s.activite, salles:s.salles,
+      e: s.statut === 'present' ? `👥 ${s.effectif}` : '❌'}));
+    rows.sort((a,b) => mins(a.t) - mins(b.t));
+    return {d, rows, tot: ss.filter(s => s.statut === 'present').reduce((a,s) => a + (+s.effectif||0), 0)};
   });
-  const wtot = days.reduce((a,x) => a+x.tot, 0);
+  const wtot = days.reduce((a,x) => a + x.tot, 0);
   const nav = isAdmin() ? `<button class="navbtn" data-act="wkShift" data-n="-7" aria-label="Semaine précédente">◀</button>
     <button class="navbtn" data-act="wkShift" data-n="7" aria-label="Semaine suivante">▶</button>` : '';
   $('#main').innerHTML = `<div class="dayhead"><h2>📅 ${mon.toLocaleDateString('fr-FR',{day:'numeric',month:'short'})} – ${sun.toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'})}</h2>${nav}
-      <div class="sum">👥 ${wtot}<small>semaine</small></div></div>
-    <div class="week">${days.map(x => `<div class="wday ${x.d===today?'today':''}">
+      <div class="sum">👥 ${wtot}</div></div>
+    <div class="week">${days.map(x => `<div class="wday ${x.d === today ? 'today' : ''}">
       <h3 data-act="wkOpen" data-d="${x.d}">${fmtCourt(x.d)} <span>👥 ${x.tot}</span></h3>
-      ${x.items.length ? x.items.map(it => {
-        const v = it.v; const past = x.d < today;
-        const e = v.statut === 'present' ? `👥 ${v.effectif}` : v.statut === 'absent' ? '❌' : (past ? '<span style="color:var(--att)">⏳</span>' : '·');
-        return `<div class="wrow"><span class="wt">${v.debut}</span>${v.salles.map(s => `<span class="dot" style="background:${SALLE[s]?.col}" title="${SALLE[s]?.court}"></span>`).join('')}<span class="wn" title="${esc(v.structureNom)}">${actIco(v.activite)} ${esc(v.structureNom)}</span><span class="we">${e}</span></div>`;
-      }).join('') : '<div class="empty" style="padding:10px;font-size:15px">—</div>'}
+      ${x.rows.length ? x.rows.map(r => `<div class="wrow"><span class="wt">${r.t}</span>${dots(r.salles)}<span class="wn" title="${esc(r.nom)}">${actIco(r.act)} ${esc(r.nom)}</span><span class="we">${r.e}</span></div>`).join('')
+        : '<div class="empty" style="padding:10px;font-size:15px">—</div>'}
     </div>`).join('')}</div>
-    ${!isAdmin() ? '<p class="msg info" style="margin-top:14px">✏️ Seul le jour d’aujourd’hui peut être modifié (onglet 📝).</p>' : ''}`;
+    ${!isAdmin() ? '<p class="msg info" style="margin-top:14px">✏️ Seul aujourd’hui est modifiable (onglet 📝).</p>' : ''}`;
 }
 ACT.wkShift = el => { S.weekRef = ymd(addDays(parseYmd(S.weekRef), +el.dataset.n)); renderMain(); };
 ACT.wkOpen = el => {
-  if (isAdmin()) { S.date = el.dataset.d; }
-  else if (el.dataset.d !== todayStr()) return;
+  if (isAdmin()) S.date = el.dataset.d; else if (el.dataset.d !== todayStr()) return;
   S.tab = 'jour'; document.querySelectorAll('nav.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === 'jour')); renderMain();
 };
 
@@ -981,7 +1075,7 @@ async function viewSynthese(){
 
   const total = pres.reduce((a,s) => a+s.effectif, 0);
   const hEntries = pres.reduce((a,s) => a+dureeH(s.debut,s.fin), 0);
-  const bySalle = new Map(), byType = new Map(), byAct = new Map(), byStr = new Map(), heat = new Map();
+  const bySalle = new Map(), byType = new Map(), byAct = new Map(), byStr = new Map(), byEns = new Map(), heat = new Map();
   let hSalles = 0;
   sais.forEach(s => {
     const h = dureeH(s.debut, s.fin), ok = s.statut === 'present';
@@ -990,6 +1084,7 @@ async function viewSynthese(){
     if (!ok) return;
     agg(byType, s.type, o => { o.cr++; o.h += h; o.p += s.effectif; });
     agg(byAct, s.activite || 'Autre', o => { o.cr++; o.h += h; o.p += s.effectif; });
+    if (s.enseignant) agg(byEns, s.structureNom + '|' + s.enseignant, o => { o.cr++; o.h += h; o.p += s.effectif; });
     const n = (s.salles||[]).length || 1;
     (s.salles||[]).forEach(id => {
       hSalles += h;
@@ -1002,7 +1097,7 @@ async function viewSynthese(){
   const maxA = Math.max(1, ...[...byAct.values()].map(o => o.p));
   const nbJS = j => { let c = 0; for (let d = parseYmd(from); ymd(d) <= to; d = addDays(d,1)) if (dow(d) === j) c++; return c; };
   const maxHeat = Math.max(1, ...heat.values());
-  S.synData = {sais, label, from, to, bySalle, byType, byAct, byStr, nbJours, ampl};
+  S.synData = {sais, label, from, to, bySalle, byType, byAct, byStr, byEns, nbJours, ampl};
 
   const bar = (v,m,c='var(--bleu)') => `<div class="bar"><i style="width:${Math.min(100, v/m*100)}%;background:${c}"></i></div>`;
   $('#main').innerHTML = `
@@ -1051,6 +1146,10 @@ async function viewSynthese(){
     <div class="box"><h3>Par structure</h3><div class="tw"><table>
       <tr><th>Structure</th><th>Type</th><th class="n">Créneaux</th><th class="n">Absences</th><th class="n">Heures</th><th class="n">Pratiquants</th><th class="n">Moyenne / créneau</th></tr>
       ${[...byStr.entries()].sort((a,b) => b[1].p - a[1].p).map(([n,o]) => `<tr><td>${esc(n)}</td><td>${TYPE_ICO[o.type]||''} ${esc(o.type||'')}</td><td class="n">${o.cr}</td><td class="n">${o.abs ? `<span class="badge b-ko">${o.abs}</span>` : 0}</td><td class="n">${nf(o.h)}</td><td class="n">${o.p.toLocaleString('fr-FR')}</td><td class="n">${o.cr ? nf(o.p/o.cr) : '—'}</td></tr>`).join('') || '<tr><td colspan="7">—</td></tr>'}
+    </table></div></div>
+    <div class="box"><h3>Par enseignant / responsable</h3><div class="tw"><table>
+      <tr><th>Structure</th><th>Enseignant / responsable</th><th class="n">Créneaux</th><th class="n">Heures</th><th class="n">Pratiquants</th><th class="n">Moyenne / créneau</th></tr>
+      ${[...byEns.entries()].sort((a,b) => a[0].localeCompare(b[0],'fr')).map(([k,o]) => { const [st,en] = k.split('|'); return `<tr><td>${esc(st)}</td><td>👤 ${esc(en)}</td><td class="n">${o.cr}</td><td class="n">${nf(o.h)}</td><td class="n">${o.p.toLocaleString('fr-FR')}</td><td class="n">${nf(o.p/o.cr)}</td></tr>`; }).join('') || '<tr><td colspan="6">—</td></tr>'}
     </table></div></div>`;
   drawChart(pres, from, to);
 }
@@ -1080,9 +1179,9 @@ function downloadCSV(name, rows){
 const dec = n => String(Math.round(n*100)/100).replace('.', ',');
 ACT.expDetail = () => {
   const D = S.synData;
-  const rows = [['Date','Jour','Structure','Type','Activité','Installations','Début','Fin','Durée (h)','Pratiquants','Statut','Prévu au planning','Saisi par','Modifié le']];
+  const rows = [['Date','Jour','Structure','Enseignant / responsable','Type','Activité','Installations','Début','Fin','Durée (h)','Pratiquants','Statut','Prévu au planning','Saisi par','Modifié le']];
   D.sais.sort((a,b) => a.date.localeCompare(b.date) || mins(a.debut)-mins(b.debut)).forEach(s => rows.push([
-    s.date, JOURS[dow(parseYmd(s.date))-1], s.structureNom, s.type, s.activite, (s.salles||[]).map(id => SALLE[id]?.nom).join(' + '),
+    s.date, JOURS[dow(parseYmd(s.date))-1], s.structureNom, s.enseignant || '', s.type, s.activite, (s.salles||[]).map(id => SALLE[id]?.nom).join(' + '),
     s.debut, s.fin, dec(dureeH(s.debut,s.fin)), s.effectif, s.statut === 'present' ? 'Présent' : 'Absent / annulé', s.planningId ? 'Oui' : 'Non', s.modifiePar || s.creePar, (s.modifieLe||'').slice(0,16).replace('T',' ')]));
   downloadCSV(`frequentation_detail_${D.from}_${D.to}.csv`, rows);
 };
@@ -1096,6 +1195,8 @@ ACT.expSynth = () => {
   [...D.byAct.entries()].sort((a,b) => b[1].p-a[1].p).forEach(([a,o]) => rows.push([a, o.cr, dec(o.h), o.p]));
   rows.push([], ['PAR STRUCTURE','Type','Créneaux','Absences','Heures','Pratiquants']);
   [...D.byStr.entries()].sort((a,b) => b[1].p-a[1].p).forEach(([n,o]) => rows.push([n, o.type, o.cr, o.abs, dec(o.h), o.p]));
+  rows.push([], ['PAR ENSEIGNANT / RESPONSABLE','Structure','Créneaux','Heures','Pratiquants']);
+  [...D.byEns.entries()].sort((a,b) => a[0].localeCompare(b[0],'fr')).forEach(([k,o]) => { const [st,en] = k.split('|'); rows.push([en, st, o.cr, dec(o.h), o.p]); });
   downloadCSV(`frequentation_synthese_${D.from}_${D.to}.csv`, rows);
 };
 
@@ -1195,7 +1296,8 @@ ACT.strEdit = el => {
       <label>Type de public</label><select id="sf_t">${TYPES_STRUCT.map(t => `<option ${t===s.type?'selected':''}>${t}</option>`).join('')}</select>
       <label>Activité</label><input id="sf_a" list="actlist" value="${esc(s.activite)}"><datalist id="actlist">${Object.keys(ACTIVITES).map(a => `<option value="${a}">`).join('')}</datalist>
       <label>Statut</label><select id="sf_s"><option value="1" ${s.actif!==false?'selected':''}>Active</option><option value="0" ${s.actif===false?'selected':''}>Inactive</option></select>
-      <p style="font-size:14px;color:var(--gris)">Pour un club, le type « CLUB rencontre sportive » est appliqué automatiquement quand l’agent coche 🏆 Match.</p>
+      <label>Enseignants (scolaires) – un nom par ligne</label><textarea id="sf_e" rows="4" style="width:100%;border:2px solid var(--ligne);border-radius:12px;padding:8px 12px;font:inherit">${esc((S.ens[s.id]||[]).join('\n'))}</textarea>
+      <p style="font-size:14px;color:var(--gris)">Les noms tapés par les agents s’ajoutent automatiquement à cette liste. Pour un club, le type « CLUB rencontre sportive » est appliqué automatiquement quand l’agent coche 🏆 Match.</p>
     </div>
     <div class="modal-actions"><button class="btn2" data-act="closeModal">Annuler</button><button class="bigbtn" data-act="strSave" data-id="${s.id||''}">Enregistrer</button></div>`);
 };
@@ -1203,7 +1305,8 @@ ACT.strSave = async el => {
   const data = {nom:$('#sf_n').value.trim(), type:$('#sf_t').value, activite:$('#sf_a').value.trim() || 'Autre', actif:$('#sf_s').value === '1'};
   if (!data.nom) return shake($('#sf_n'));
   const id = el.dataset.id || genId();
-  try { await S.store.set('structures', id, data); await loadRefs(); closeModal(); toast('✅ Enregistré'); viewStructures(); } catch(e){ toast('❌ '+errMsg(e)); }
+  const noms = [...new Set($('#sf_e').value.split('\n').map(x => x.trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b,'fr'));
+  try { await S.store.set('structures', id, data); if (noms.length || S.ens[id]) await S.store.set('enseignants', id, {noms}); await loadRefs(); closeModal(); toast('✅ Enregistré'); viewStructures(); } catch(e){ toast('❌ '+errMsg(e)); }
 };
 ACT.strDel = async el => {
   const n = S.planning.filter(p => p.structureId === el.dataset.id).length;
@@ -1279,9 +1382,7 @@ ACT.userCard = el => {
     <div class="box">👤 Identifiant :<div class="big">${esc(u.id)}</div></div>
     <div class="box">🔑 Mot de passe :<div class="line"></div><small style="font-size:15px">À écrire vous-même. Ne le donnez à personne. 📝</small></div>
     <h2>Pictogrammes</h2><div class="lg">
-      <span>➖➕</span><span>Nombre de personnes</span><span>✅</span><span>Présent : enregistrer</span><span>❌</span><span>Absent / annulé</span>
-      <span>⏰</span><span>Changer l’horaire</span><span>❓</span><span>Choisir la salle</span><span>🏆</span><span>Match</span>
-      <span>⧉</span><span>Même groupe, autre salle</span><span>➕</span><span>Groupe non prévu</span></div>
+      ${LEGENDE.map(([i,t]) => `<span>${i}</span><span>${t}</span>`).join('')}</div>
     <h2>Salles</h2><div class="lg">${SALLES.map(s => `<span>${s.ico}</span><span><span class="chip" style="background:${s.col}">${s.court}</span> ${s.nom}</span>`).join('')}</div>
     <script>setTimeout(()=>print(),400)<\/script></body></html>`);
   w.document.close();
