@@ -665,7 +665,7 @@ async function boot(){
 function loginFrame(inner){
   $('#app').innerHTML = `<div class="login">
     <img class="logo" src="${LOGO}" alt="Ville de Vaucresson">
-    <h1>Complexe sportif Yves du Manoir<span class="l-year">${ANNEE}</span><small style="font-weight:400;opacity:.85">Fréquentation</small></h1>
+    <h1>Complexe sportif Yves du Manoir<br><small style="font-weight:400;opacity:.85">Fréquentation</small></h1>
     <div class="panel">${inner}</div>
     ${S.store?.mode === 'local' ? '<div class="msg warn" style="max-width:420px">🧪 Mode démo : les données restent sur cet appareil.</div>' : ''}
     <footer class="copy">${COPY}</footer>
@@ -778,7 +778,7 @@ function renderShell(){
     ${S.store.mode === 'local' ? '<div class="demo">🧪 Mode démo – données enregistrées sur cet appareil uniquement</div>' : ''}
     <header class="top">
       <img src="${LOGO}" alt="Ville de Vaucresson">
-      <div class="h-title"><div class="h-row"><b><span class="h-cx">Complexe </span>Yves du Manoir</b><span class="h-year">${ANNEE}</span></div><small>Fréquentation</small></div>
+      <div class="h-title"><div class="h-row"><b><span class="h-cx">Complexe </span>Yves du Manoir</b></div><small>Fréquentation</small></div>
       <div class="h-user"><span>👤 ${esc(S.me.nom || S.me.id)}</span>
         <button class="icobtn" data-act="help" title="Aide" aria-label="Aide">❓</button>
         <button class="icobtn" data-act="logout" title="Se déconnecter" aria-label="Se déconnecter">⏻</button></div>
